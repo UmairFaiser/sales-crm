@@ -24,7 +24,7 @@ export default function PipelineHealth({ company }: PipelineHealthProps) {
           Win probability across all open deals
         </span>
       </div>
-      <div className="flex flex-col gap-3">
+<div className="flex flex-col gap-5 rounded-xl border border-white/8 bg-white/[0.025] p-4">
         {stages.map((stage) => (
           <div key={stage.label} className="flex flex-col gap-2">
             <div className="caption-style flex items-center justify-between">

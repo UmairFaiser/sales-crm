@@ -27,9 +27,9 @@ export default function ActivityTrend({ company }: ActivityTrendProps) {
   ];
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <div className="flex items-baseline gap-[3px]">
+        <div className="flex items-end justify-between gap-3">
           <span className="block text-[24px] leading-none">{activity.total}</span>
           <Sparkline values={company.trend} className="h-[22px]" />
         </div>
@@ -41,7 +41,7 @@ export default function ActivityTrend({ company }: ActivityTrendProps) {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="flex flex-col gap-3 rounded-lg border border-line-strong p-[11px]"
+            className="flex flex-col gap-4 rounded-xl border border-white/8 bg-white/[0.025] p-3 transition-colors hover:bg-white/[0.05]"
           >
             <span className="caption-style flex items-center gap-1 text-soft">
               <stat.icon aria-hidden className="size-3 shrink-0" />

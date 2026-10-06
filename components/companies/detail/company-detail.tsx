@@ -51,11 +51,16 @@ export default function CompanyDetail() {
       open={detailOpen && company !== undefined}
       onOpenChange={(open) => !open && closeDetail()}
     >
-      <SheetContent side="right" className="sm:w-[560px] sm:max-w-[560px]">
-        <SheetHeader>
-          <div className="flex items-center gap-2">
-            <BuildingIcon aria-hidden className="text-icon size-3.5" />
-            <SheetTitle>Companies Detail</SheetTitle>
+      <SheetContent side="right" className="border-l border-white/10 bg-[#111214] sm:w-[620px] sm:max-w-[620px]">
+        <SheetHeader className="border-b border-white/8 bg-[#16171a] px-6 py-5">
+          <div className="flex items-center gap-3">
+            <span className="flex size-8 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <BuildingIcon aria-hidden className="size-4" />
+            </span>
+            <div className="flex flex-col gap-1">
+              <SheetTitle className="text-[15px]">Company overview</SheetTitle>
+              <span className="caption-style text-soft">Relationship workspace</span>
+            </div>
           </div>
           <SheetDescription className="sr-only">
             Account summary, pipeline health, activity and score cards
@@ -74,8 +79,9 @@ export default function CompanyDetail() {
 
         {company && owner && (
           <ScrollArea className="min-h-0 flex-1">
-            <div className="flex items-start gap-3 p-5 shadow-[inset_0_-1px_0_var(--line-strong)]">
-              <span className="bg-muted flex size-[50px] shrink-0 items-center justify-center rounded-[12.5px] shadow-[0px_6.25px_6.25px_0px_rgba(15,15,15,0.24),0px_0px_0px_1.563px_#232323]">
+            <div className="relative flex items-start gap-4 overflow-hidden border-b border-white/8 bg-gradient-to-br from-[#1c1d25] via-[#17181c] to-[#111214] px-6 py-6">
+              <div className="pointer-events-none absolute -right-12 -top-16 size-44 rounded-full bg-primary/15 blur-3xl" />
+              <span className="relative z-10 flex size-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] shadow-lg">
                 {company.logo ? (
                   <Asset
                     type="image"
